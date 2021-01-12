@@ -11,7 +11,7 @@ export function myProgram() {
     }
     
     const p = new Program()
-    p.write('going via ioc container')
+    p.write('** going via ioc container')
 }
 
 export function myProgram2() {
@@ -25,5 +25,20 @@ export function myProgram2() {
     }
     
     const p = new Program2()
-    p.write('Object going via ioc container')
+    p.write('** Object going via ioc container')
+}
+
+
+export function myProgram3() {
+    class Program3 {
+        @Inject('MyDependant')
+        myClass!: any // or MyClass
+    
+        write(m: string): void {
+            this.myClass.out(m)
+        }
+    }
+    
+    const p = new Program3()
+    p.write('** Dependant going via ioc container')
 }
