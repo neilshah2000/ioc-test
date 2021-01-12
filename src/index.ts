@@ -1,11 +1,3 @@
-
-
-import { MyClass2 } from './useIOC'
-
-let mc = new MyClass2()
-
-mc.write('Hello from class2')
-
 //
 // Allows the automated injector to be enabled/disabled, good for automated testing where you want to manually do the injection.
 //

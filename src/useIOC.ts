@@ -1,4 +1,4 @@
-import { InjectProperty, Injectable } from './IOC';
+import { InjectProperty, Injectable, Autowired } from './IOC';
 
 
 
@@ -27,7 +27,7 @@ class MySingleton7 implements IMySingleton7 {
     }
 }
 
-
+@Autowired()
 export class MyClass2 {
     @InjectProperty("IMySingleton7")
     dep!: IMySingleton7;
@@ -37,3 +37,4 @@ export class MyClass2 {
     }
 }
 
+new MyClass2().write('Hello from class2')
