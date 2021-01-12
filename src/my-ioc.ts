@@ -1,11 +1,21 @@
 const dependencies: any = {}
 
-export function register(myClass: any, name: string): void {
+export function register(Dependency: any, name: string): void {
     console.log('Registering ' + name)
-
-    // instantiate straight away
-    const myObj = new myClass
-    dependencies[name] = myObj
+    console.log('type ' + typeof Dependency)
+    switch(typeof Dependency) {
+        case 'function': // class
+            // instantiate straight away
+            const myInst = new Dependency()
+            dependencies[name] = myInst
+            break;
+        case 'object':
+            // already created
+            const myObj = Dependency
+            dependencies[name] = myObj
+            break;
+    }
+    
 }
 
 

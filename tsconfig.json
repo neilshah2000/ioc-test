@@ -11,5 +11,6 @@
   "include": [
     "src/**/*.ts",
     "test/**/*.ts"
-  ]
+  ],
+  "noImplicitAny": false
 }
